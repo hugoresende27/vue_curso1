@@ -33,7 +33,7 @@
         <button :class="{'is-loading':isLoading}" @click="toggleClass">Click me</button>
         <button :class="{'is-loading':isLoading}" @click="toggleClass">Click me</button>
 
-        <button  @click="disableClass" :disable="{disabled:true}">Disabled</button>
+        <button :disabled="isDisabled" @click="disableMe">Disable when clicked</button>
         
 
     </div>
@@ -55,7 +55,7 @@
 
                   isLoading: false,
 
-                  disabled: false
+                  isDisabled: false
 
             },
 
@@ -63,9 +63,9 @@
                 toggleClass() {
                     this.isLoading = true;
                 },
-                disableClass(){
-                    this.disabled = true;
-                }
+                disableMe() {
+					this.isDisabled = true;
+				}
             }
      
 
